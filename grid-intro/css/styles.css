@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+}
+
+.outer-block {
+  border: 5px solid blue;
+  height: 700px;
+}
+
+.inner-block {
+  padding: 5px;
+  border: 5px solid red;
+}
+
+.grid-container {
+  display: grid;
+  /* grid-template-columns: 200px 3fr 1fr;
+  grid-template-rows: 150px 600px 100px; */
+  grid-template: 150px 300px 100px / repeat(3, 200px);
+  /* неявная сетка */
+  grid-auto-rows: 100px;
+
+  /* позиционировать блок с заданными размерами внутри ячейки */
+  align-items: end;
+  justify-items: end;
+  /* place-items: center end; */
+  /* позиционирование ячееек строк/столбцов снутри контейнера */
+  justify-content: space-between;
+  align-content: space-evenly;
+}
+
+.area {
+  width: 100px;
+  height: 100px;
+}
+
+.area:nth-child(1) {
+  align-self: center;
+  justify-self: start;
+  /* grid-column-start: 1;
+  grid-column-end: 4; */
+}
+/*
+.area:nth-child(2) {
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+.area:nth-child(5) {
+  grid-column-start: 2;
+  grid-column-end: 4;
+} */

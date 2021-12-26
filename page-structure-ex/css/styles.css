@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 250px 1fr 250px;
+  grid-template-rows: 200px 1fr 150px;
+
+  min-height: 100vh;
+  /* ASCII-графика */
+  grid-template-areas:
+    'header header header'
+    'nav main aside'
+    'nav footer aside';
+}
+
+body > * {
+  border: 5px solid red;
+}
+
+header,
+footer {
+  /* grid-column: 1 / span 3; */
+}
+/* ASCII-графика start */
+header {
+  grid-area: header;
+}
+footer {
+  grid-area: footer;
+}
+nav {
+  grid-area: nav;
+}
+main {
+  grid-area: main;
+}
+aside {
+  grid-area: aside;
+}
+/* ASCII-графика end */
+
+@media screen and (max-width: 850px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px 1fr 1fr 1fr 150px;
+    grid-template-areas:
+      'header'
+      'main'
+      'nav'
+      'aside'
+      'footer';
+  }
+  header,
+  footer {
+    /* grid-column-start: 1;
+    grid-column-end: 2; */
+  }
+  main {
+    /* grid-row-start: 2;
+    grid-row-end: 3; */
+  }
+} ;
